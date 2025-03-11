@@ -4,73 +4,35 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
     background-color: #f0f4ec;
 }
 
 
-/* Sidebar */
-
-.sidebar {
-    width: 250px;
-    background: #e0e4d8;
-    padding: 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* Header Styles */
+/* Header */
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo-container img {
+    width: 50px;
+    height: 50px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    gap: 400px;
+    font-size: 10px;
+    font-weight: bold;
 }
 
-.menu-toggle {
-    display: none;
+.logo-container i {
     font-size: 24px;
-    cursor: pointer;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    padding: 15px;
-    background: #c5c8b7;
-    margin: 10px 0;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-nav ul li:hover {
-    background: #b0b3a3;
-}
-
-
-/* Main Content */
-
-.main-content {
-    flex: 1;
-    padding: 20px;
 }
 
 .search-bar {
@@ -94,6 +56,9 @@ nav ul li:hover {
     cursor: pointer;
 }
 
+
+/* cart */
+
 .icons i {
     font-size: 20px;
     margin-left: 15px;
@@ -101,55 +66,123 @@ nav ul li:hover {
 }
 
 
-/* Product Section */
+/* Dashboard Layout */
 
-.products h3 {
-    margin-bottom: 15px;
+.dashboard-container {
+    display: flex;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
+.bx-search-alt-2 {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
 }
 
-.product-card {
+
+/* Sidebar */
+
+.search-bar {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.nav-bar li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
     background: #fff;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 20px;
+    height: 145vh;
+    border-right: 2px solid #ccc;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #4a90e2;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    background: #dcdcdc;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background: #b0b3a3;
+}
+
+
+/* Main */
+
+section h3 {
+    margin-bottom: 15px;
     text-align: center;
 }
 
-.product-image {
-    width: 100%;
-    height: 120px;
-    background: #ccc;
-    border-radius: 5px;
+section ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 60px 0 90px;
+    transition: all 0.3s ease-in-out;
 }
 
-.see-more {
-    display: block;
-    text-align: right;
-    color: #007bff;
-    text-decoration: none;
-    margin-top: 10px;
+section li {
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.see-more:hover {
-    text-decoration: underline;
+section li img {
+    max-width: 100%;
+    max-height: 50%;
+}
+
+section li:hover {
+    transform: translateY(-10px);
 }
 
 
 /* Responsive */
 
 @media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
     .sidebar {
-        width: 200px;
+        width: 100%;
+        height: auto;
     }
-    .menu-toggle {
-        display: block;
-    }
-    .search-bar input {
-        width: 150px;
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 }
