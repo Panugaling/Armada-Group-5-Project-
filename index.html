@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product View</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <aside>
+            <button onclick=""><img src=""></button>
+            <button onclick=""><img src=""></button>
+        </aside>
+        <main>
+            <nav>
+                <h1>HomeStyle</h1>
+                <button onclick=""><img src=""></button>
+            </nav>
+            <form>
+                    <div class="searchbar">
+                        <input type="search" placeholder="search products" class="searchinput">
+                        <button class="search-btn"><img src="Search.png"></button>
+                        <button class="cart-btn"><img src="cart.png"></button>
+                    </div>
+                    <div class="backToProducts">
+                        <button type="button" onclick=""><img src="Back.png"></button>
+                        <a href="">All Products</a>
+                    </div>
+            </form>
+            <article>
+                 <div class="product-card">
+                    <div class="product-image">
+                        <img src="chair1.png" alt="Mazz Dining Chair">
+                    </div>
+                    <div class="product-info">
+                        <h1>Mazz Dining Chair</h1>
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur. Eget sit posuere enim facilisi. Pretium orci venenatis habitasse gravida nulla tincidunt iaculis. Aliquet at massa quisque libero viverra ut sed. Est vulputate est rutrum nunc nunc pellentesque ultrices pharetra. Mauris euismod sed vel quisque tincidunt suspendisse sed turpis volutpat. </p>                              
+                    </div>
+                    <div class="purchase-info">
+                        <div class="quantity-section">
+                            <label for="quantity">Quantity</label>
+                            <div class="quantity-wrapper">
+                                <input type="number" id="quantity" value="1" min="1">
+                                <div class="quantityButtons">
+                                    <button class="quantity-btn" id="increase">▲</button>
+                                    <button class="quantity-btn" id="decrease">▼</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total-amount">
+                            <span>Total Amount</span>
+                            <div class="amount">$10.00</div> 
+                        </div>
+                        <button class="add-to-cart">
+                            Add to cart <span class="cart-icon">🛒</span>
+                        </button>
+                    </div>
+                    <div class="imagesAngle">
+                        <button onclick=""><img src="chair_1stangle.jpg"></button>
+                        <button onclick=""><img src="chair_2ndangle.jpg"></button>
+                        <button onclick=""><img src="chair_3rdangle.jpg"></button>
+                    </div>              
+                </div>
+            </article>
+            <footer>
+                <p class="similarItems">Similar Items</p>
+                <ul>
+                    <li>
+                        <button onclick="">
+                            <img src="1st_similaritem.png">
+                            <div class="itemDetails">
+                                <div class="nameAndstars">
+                                    <p>Chair</p>
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <div class="costAndrating">
+                                    <h4>$ 10.00</h4>
+                                    <p>200+ rating</p>
+                                </div>
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="">
+                            <img src="2nd_similaritem.jpg">
+                            <div class="itemDetails">
+                                <div class="nameAndstars">
+                                    <p>Chair</p>
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <div class="costAndrating">
+                                    <h4>$ 10.00</h4>
+                                    <p>200+ rating</p>
+                                </div>
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="">
+                            <img src="3rd_similaritem.jpg">
+                            <div class="itemDetails">
+                                <div class="nameAndstars">
+                                    <p>Chair</p>
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <div class="costAndrating">
+                                    <h4>$ 10.00</h4>
+                                    <p>200+ rating</p>
+                                </div>
+                            </div>
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="">
+                            <img src="4th_similaritem.jpg">
+                            <div class="itemDetails">
+                                <div class="nameAndstars">
+                                    <p>Chair</p>
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <div class="costAndrating">
+                                    <h4>$ 10.00</h4>
+                                    <p>200+ rating</p>
+                                </div>
+                            </div>
+                        </button>
+                    </li>
+                </ul>
+            </footer>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
