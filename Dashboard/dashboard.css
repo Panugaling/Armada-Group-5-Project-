@@ -1,0 +1,155 @@
+/* General Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f0f4ec;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background: #e0e4d8;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header Styles */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 15px;
+    background: #c5c8b7;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    background: #b0b3a3;
+}
+
+
+/* Main Content */
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    border: none;
+    padding: 10px;
+    width: 200px;
+    outline: none;
+}
+
+.search-bar button {
+    border: none;
+    background: #ddd;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.icons i {
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+/* Product Section */
+
+.products h3 {
+    margin-bottom: 15px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: 120px;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.see-more {
+    display: block;
+    text-align: right;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.see-more:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .search-bar input {
+        width: 150px;
+    }
+}
