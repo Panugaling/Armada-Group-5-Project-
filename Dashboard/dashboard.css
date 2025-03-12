@@ -5,6 +5,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f4ec;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
 }
 
 
@@ -18,7 +22,23 @@ body {
     border-bottom: 2px solid #ddd;
 }
 
+.user-profile {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-profile i {
+    width: 80px;
+    height: 30px;
+    font-size: 24px;
+    color: #171f27;
+}
+
 .logo-container img {
+    margin-left: 100px;
     width: 50px;
     height: 50px;
 }
@@ -26,7 +46,7 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 400px;
+    gap: 100px;
     font-size: 10px;
     font-weight: bold;
 }
@@ -45,7 +65,7 @@ body {
 .search-bar input {
     border: none;
     padding: 10px;
-    width: 200px;
+    width: 400px;
     outline: none;
 }
 
@@ -84,10 +104,10 @@ body {
 /* Sidebar */
 
 .search-bar {
+    position: relative;
     width: 100%;
     display: inline-block;
     text-align: center;
-    position: relative;
 }
 
 .nav-bar li {
@@ -101,17 +121,31 @@ body {
 }
 
 .sidebar {
+    position: relative;
     width: 250px;
     background: #fff;
     padding: 20px;
-    height: 145vh;
+    height: 100vh;
     border-right: 2px solid #ccc;
+}
+
+.toggle-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.toggle-menu i {
+    font-size: 2.5rem;
 }
 
 .sidebar h3 {
     margin-bottom: 10px;
     padding-bottom: 5px;
     border-bottom: 2px solid #4a90e2;
+    font-size: 2rem;
 }
 
 .sidebar ul {
@@ -130,16 +164,71 @@ body {
     cursor: pointer;
 }
 
-.sidebar li:hover {
-    background: #b0b3a3;
+.sidebar li img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #171f27;
+}
+
+.price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.cart-btn,
+.price {
+    margin: 10px 20px 0 0;
+}
+
+.cart-btn {
+    background-color: #171f27;
+    color: white;
+    border: none;
+    padding: 8px 13px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: .8rem;
+    transition: all 0.3s ease;
+}
+
+.rating {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #646462;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.cart-btn:hover {
+    background-color: #e03e00;
 }
 
 
 /* Main */
 
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 section h3 {
-    margin-bottom: 15px;
-    text-align: center;
+    margin: 50px 10px 15px 200px;
+    text-align: left;
+    font-size: 2rem;
 }
 
 section ul {
@@ -148,7 +237,7 @@ section ul {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
-    margin: 0 60px 0 90px;
+    margin: 0 60px 0 200px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -157,7 +246,7 @@ section li {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 200px;
-    height: 300px;
+    height: 250px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -169,6 +258,92 @@ section li img {
 
 section li:hover {
     transform: translateY(-10px);
+}
+
+
+/* Footer */
+
+
+/* Footer */
+
+footer {
+    position: absolute;
+    top: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 100px;
+    list-style: none;
+}
+
+footer ul li {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-align: left;
+    margin: 10px;
+    gap: 10px;
+    color: #FAFAFA;
+}
+
+footer ul li a {
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.app-qr,
+.app-logo {
+    display: inline-block;
+}
+
+.app-logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    margin: 10px 50px 0 0;
+    font-size: 1.8rem;
+    color: #f0f4ec;
+}
+
+.footer-socials i {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    footer {
+        padding-left: 20px;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+    }
+    footer li {
+        margin-bottom: 15px;
+    }
 }
 
 
