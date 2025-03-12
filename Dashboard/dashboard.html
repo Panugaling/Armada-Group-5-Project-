@@ -7,6 +7,7 @@
     <title>HomeStyle Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -17,19 +18,36 @@
             <img src="./Asset/icons/logo.png" alt="HomeStyle Logo">
             <h1 class="title">HomeStyle</h1>
         </div>
+        <div class="user-profile">
+            <i class='bx bxs-user-circle'></i>
+        </div>
 
     </header>
 
     <div class="dashboard-container">
         <!-- Aside -->
+
         <nav class="sidebar">
+            <div class="toggle-menu">
+                <i class='bx bx-menu'></i>
+            </div>
             <h3>Categories</h3>
             <ul>
-                <li><i class="fas fa-couch"></i> Sofa / Chairs</li>
-                <li><i class="fas fa-bed"></i> Bed</li>
-                <li><i class="fas fa-table"></i> Table</li>
-                <li><i class="fas fa-archive"></i> Cabinet Wardrobe</li>
-                <li><i class="fas fa-book"></i> Vanity</li>
+                <li>
+                    <a href="#"><img src="./Asset/icons/chair_sidebar.jpg"> Sofa / Chairs</a>
+                </li>
+                <li>
+                    <a href="#"><img src="./Asset/icons/Bed_sidebar.png"> Bed</a>
+                </li>
+                <li>
+                    <a href="#"><img src="./Asset/icons/Cabinets_sidebar.png"> Cabinet/ Wardrobes</a>
+                </li>
+                <li>
+                    <a href="#"><img src="./Asset/icons/Table_sidebar.png"> Tables</a>
+                </li>
+                <li>
+                    <a href="#"><img src="./Asset/icons/vanity_sidebar.png"> Vanity</a>
+                </li>
             </ul>
         </nav>
 
@@ -50,12 +68,13 @@
             </ul>
 
             <section>
-                <h3>Products</h3>
+                <h3>All Products</h3>
                 <ul>
                     <li>
                         <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
                         <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -66,9 +85,10 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/chair and sofa/leather Loveseat Recliner .jpg" alt="leather Loveseat Recliner">
+                        <h4>leather Loveseat Recliner</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -78,22 +98,10 @@
                             <span>200+ rating</span>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
-                        <div class="rating">
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <i class='bx bx-star'></i>
-                            <span>200+ rating</span>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/chair and sofa/Bora Lounge Chair.jpg" alt="Bora Lounge Chair">
+                        <h4>Bora Lounge Chair</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -104,9 +112,10 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/chair and sofa/Teddy Boucle Seater.jpg" alt="Teddy Boucle Seater">
+                        <h4>Teddy Boucle Seater</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -117,9 +126,10 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/chair and sofa/Swivel Chair.jpg" alt="Swivel Chair">
+                        <h4>Swivel Chair</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -130,9 +140,10 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/Tables/White Marble Side Table.jpg" alt="White Marble Side Table">
+                        <h4>White Marble Side Table</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -143,9 +154,11 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/bed/victorian bed.jpg" alt="victorian bed">
+                        <h4>victorian bed</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -156,9 +169,10 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/Tables/Vector Expandable Dining Table.jpg" alt="Vector Expandable Dining Table">
+                        <h4>Vector Expandable Dining Table</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -169,9 +183,10 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/Tables/Pedestal Dining Table.jpg" alt="Pedestal Dining Table">
+                        <h4>Pedestal Dining Table</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -182,9 +197,10 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/Tables/Console Table.jpg" alt="Console Table">
+                        <h4>Console Table</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -195,9 +211,136 @@
                         </div>
                     </li>
                     <li>
-                        <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
-                        <h4>Jocelyn Brown Queen Bed</h4>
-                        <p>$10.00</p>
+                        <img src="./Asset/wardrobes and cabinet/Bedside table with drawers.jpg" alt="Bedside table with drawers">
+                        <h4>Bedside table with drawers</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/wardrobes and cabinet/Glass Display Cabinet.jpg" alt="Glass Display Cabinet">
+                        <h4>Glass Display Cabinet</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/wardrobes and cabinet/Tallboy Dresser.jpg" alt="Tallboy Dresser">
+                        <h4>Tallboy Dresser</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/wardrobes and cabinet/Floating Cabinet.jpg" alt="Floating Cabinet">
+                        <h4>Floating Cabinet</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/wardrobes and cabinet/Modular Closet System.jpg" alt="Modular Closet System">
+                        <h4>Modular Closet System</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/bed/Lana Upholstered Storage Bed.jpg" alt="Lana Upholstered Storage Bed">
+                        <h4>Lana Upholstered Storage Bed</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/bed/modern bed.jpg" alt="modern bed">
+                        <h4>modern bed</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/bed/French Wooden Bed.jpg" alt="French Wooden Bed">
+                        <h4>French Wooden Bed</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/Vanity/Mirror LED Vanity Makeup Table Set .jpg" alt="Mirror LED Vanity Makeup Table">
+                        <h4>LED Vanity Makeup Table Set</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
+                        <div class="rating">
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <span>200+ rating</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./Asset/Vanity/Dressing With Adjustable Vanity.jpg" alt="Dressing With Adjustable Vanity">
+                        <h4>Dressing With Adjustable Vanity</h4>
+                        <span class="price">$10.00</span>
+                        <button class="cart-btn"><i class="bx bx-cart"></i>Add to Cart</button>
                         <div class="rating">
                             <i class='bx bx-star'></i>
                             <i class='bx bx-star'></i>
@@ -210,7 +353,52 @@
                 </ul>
             </section>
         </main>
+        <footer>
+            <ul>
+                <li>
+                    <h1>Contact Us</h1>
+                    <span>Homestyle@gmail.com</span>
+                    <span>123-456-7890</span>
 
+                </li>
+                <li>
+                    <h1>Acount</h1>
+                    <a href="#">My Account</a>
+                    <a href="#">Login /Register</a>
+                    <a href="#">Cart</a>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <h1>Quick Link</h1>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Contact</a>
+
+
+                </li>
+                <li>
+                    <h1>Download App</h1>
+                    <p>Save $3 with App New User Only</p>
+                    <div class="app-qr">
+                        <img src="./Asset/Qrcode 1.png" alt="App QR Code">
+
+                        <div class="app-logo">
+
+                            <img src="./Asset/download-appstore.png" alt="App Store">
+                            <img src="./Asset/google-play-logo.png" alt="Google Play">
+                        </div>
+                        <div class="footer-socials">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                        </div>
+                </li>
+            </ul>
+        </footer>
+
+        <script src="script.js"></script>
 </body>
 
 </html>
