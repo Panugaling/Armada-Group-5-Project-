@@ -1,0 +1,480 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+.user-profile {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px; 
+}
+
+.logout-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px #0000001a;
+    display: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+#logout-btn {
+    background-color: #0715a6;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-profile i {
+    width: 80px;
+    height: 30px;
+    font-size: 24px;
+    color: #171f27;
+}
+
+.logo-container img {
+    margin-left: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.logo-container i {
+    font-size: 24px;
+}
+
+.order-confirmation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.order-confirmation figure {
+    flex-shrink: 0;
+}
+
+.order-confirmation figure img {
+    max-width: 350px;
+}
+
+.order-confirmation h2 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #777;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.order-confirmation h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #222;
+}
+
+.order-confirmation p {
+    font-size: 16px;
+    color: #444;
+}
+
+#order-summary {
+    text-align: left;
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#order-summary h3 {
+    color: #444;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.order-table th, .order-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.order-table th {
+    background: #eee;
+    font-weight: bold;
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 14px;
+}
+
+.cart-btn,
+.continue-btn {
+    text-decoration: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-btn {
+    background: #07452b;
+    color: white;
+    border: none;
+}
+
+.continue-btn {
+    background: white;
+    color: black;
+    border: 1.5px solid #07452b;
+}
+
+.cart-btn:hover {
+    background: #6b9975;
+    color: black;
+}
+
+.continue-btn:hover {
+    background: #07452b;
+    color: white;
+}
+
+footer {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 100px;
+    list-style: none;
+}
+
+footer ul li {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    text-align: left;
+    margin: 10px;
+    gap: 10px;
+    color: #FAFAFA;
+}
+
+footer ul li:hover {
+    color: #6b9975;
+}
+
+footer ul li a {
+    color: #FAFAFA;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #6b9975;
+}
+
+.app-qr,
+.app-logo {
+    display: inline-block;
+}
+
+.app-logo {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    margin: 15px 50px 0 0;
+    font-size: 1.8rem;
+    color: #f0f4ec;
+}
+
+.footer-socials i {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-socials i:hover {
+    color: #6b9975;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .logo-container,
+    .logo-container img,
+    .logo-container h1,
+    .order-confirmation,
+    .order-confirmation * {
+        visibility: visible;
+    }
+
+    .order-confirmation {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 2px solid #000;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: none;
+    }
+
+    .logo-container {
+        margin: auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+    }
+
+    .logo-container img {
+        width: 40px; 
+        height: auto;
+        margin-right: 5px;
+    }
+
+    .logo-container h1 {
+        font-size: 16px; 
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .order-confirmation h1 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .order-confirmation p {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    #order-summary {
+        background: none;
+        padding: 10px;
+        border: none;
+    }
+
+    #order-summary h3 {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .order-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    .order-table th,
+    .order-table td {
+        border: 1px solid #000;
+        padding: 5px;
+        text-align: left;
+    }
+
+    .total-price {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+        color: #000;
+    }
+
+    .button-group,
+    footer {
+        display: none;
+    }
+
+    * {
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+    }
+
+    .logo-container img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-container h1 {
+        font-size: 18px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .user-profile {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        margin-left: auto; 
+    }
+
+    .user-profile i {
+        font-size: 22px;
+    }
+
+    .order-confirmation {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px;
+    }
+
+    .order-confirmation figure img {
+        max-width: 80%;
+    }
+
+    .order-confirmation h1 {
+        font-size: 22px;
+    }
+
+    .order-confirmation p {
+        font-size: 14px;
+    }
+
+    #order-summary {
+        padding: 15px;
+    }
+
+    .order-table th,
+    .order-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cart-btn,
+    .continue-btn {
+        width: 50%;
+        text-align: center;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container h1 {
+        font-size: 16px;
+    }
+
+    .order-confirmation h1 {
+        font-size: 20px;
+    }
+
+    .order-confirmation p {
+        font-size: 13px;
+    }
+
+    .order-table th,
+    .order-table td {
+        font-size: 12px;
+    }
+
+    .cart-btn,
+    .continue-btn {
+        font-size: 14px;
+    }
+
+    .footer-socials {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+

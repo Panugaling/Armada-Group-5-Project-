@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order Confirmation - HomeStyle</title>
+        <link rel="stylesheet" href="order-confirmation.css">
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <a href="dashboard.html"><img src="order-confirmation-assets/homestyle-logo.png" alt="HomeStyle Logo"></a>
+                <h1>HomeStyle</h1>
+            </div>
+            <div class="user-profile" id="user-profile">
+                <i class='bx bxs-user-circle'></i>
+                <div class="logout-dropdown" id="logout-dropdown">
+                    <button id="logout-btn">Log Out</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="order-confirmation">
+                <figure>
+                    <img src="order-confirmation-assets/Delivery.png" alt="Delivery icon">
+                </figure>                
+                <div>
+                    <h2>ORDER SUCCESSFUL</h2>
+                    <h1>Thank you for ordering!</h1>
+                    <p>Order number is: <span class="order-number"></span></p>
+                    <div id="order-summary">
+                        <h3>Billing Information</h3>
+                            <p><strong>Name:</strong> <span id="billing-name"></span></p>
+                            <p><strong>Address:</strong> <span id="billing-address"></span></p>
+                            <p><strong>Phone:</strong> <span id="billing-phone"></span></p>
+                            <p><strong>Email:</strong> <span id="billing-email"></span></p>
+                        <h3>Order Summary</h3>
+                        <table class="order-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="order-items">
+                               
+                            </tbody>
+                        </table>
+
+                        <p><strong>Payment Method:</strong> <span id="payment-method"></span></p>
+                        <h3>Total: <span id="total-price" class="total-price"></span></h3>
+                    </div>
+   
+                    <div class="button-group">
+                        <button class="cart-btn">Print Receipt</button>
+                        <a href="dashboard.html" class="continue-btn">Continue Shopping</a>
+                    </div>                    
+                </div>
+            </section>
+        </main>
+        <footer>
+            <ul>
+                <li>
+                    <h1>Contact Us</h1>
+                    <span>homestyle@gmail.com</span>
+                    <span>123-456-7890</span>
+                </li>
+                <li>
+                    <h1>Account</h1>
+                    <a href="#">My Account</a>
+                    <a href="login.html">Login / Register</a>
+                    <a href="#">Cart</a>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <h1>Quick Links</h1>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <h1>Download App</h1>
+                    <p>Save $3 with App New User Only</p>
+                    <div class="app-qr">
+                        <img src="order-confirmation-assets/Qr Code.png" alt="App QR Code">
+                        <div class="app-logo">
+                            <img src="order-confirmation-assets/download-appstore.png" alt="App Store">
+                            <img src="order-confirmation-assets/google-play-store.png" alt="Google Play">
+                        </div>
+                        <div class="footer-socials">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </footer>  
+        <script src="order-confirmation.js"></script>  
+    </body>
+</html>

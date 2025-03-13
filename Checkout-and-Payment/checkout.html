@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout</title>
+        <link rel="stylesheet" href="checkout.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <a href="dashboard.html"><img src="checkout-assets/homestyle-logo.png" alt="HomeStyle Logo"></a>
+                <h1>HomeStyle</h1>
+            </div>
+            <div class="user-profile" id="user-profile">
+                <i class='bx bxs-user-circle'></i>
+                <div class="logout-dropdown" id="logout-dropdown">
+                    <button id="logout-btn">Log Out</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="backLink">
+                <a href="dashboard.html" onclick="navigateTo('home')">Home</a>
+                <p>/</p>
+                <a href="cart.html" onclick="navigateTo('cart')">Back to Cart</a>
+            </div>
+            <h3>Billing Details</h3>
+            <article>
+                <div class="billingSignup">
+                    <form id="checkout-form">
+                        <ul>
+                            <li>
+                                <p>First Name*</p>
+                                <input type="text" name="firstname" required>
+                            </li>
+                            <li>
+                                <p>Last Name*</p>
+                                <input type="text" name="lastname" required>
+                            </li>
+                            <li>
+                                <p>Address*</p>
+                                <input type="text" name="address" required>
+                            </li>
+                            <li>
+                                <p>Town/City*</p>
+                                <input type="text" name="city" required>
+                            </li>
+                            <li>
+                                <p>Phone Number*</p>
+                                <input type="text" name="phone" required>
+                            </li>
+                            <li>
+                                <p>Email Address*</p>
+                                <input type="email" name="email" required>
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="save-info">
+                                    Save this information for faster check-out next time
+                                </label>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+                <div class="billingOrder">
+                    <ul>
+                        <li>
+                            <p class="item-name">Item:</p>
+                            <p class="item-price"></p>
+                        </li>
+                        <li>
+                            <p class="item-name">Item:</p>
+                            <p class="item-price"></p>
+                        </li>
+                        <li>
+                            <p>Subtotal:</p>
+                            <p id="subtotal"></p>
+                        </li>
+                        <li class="shipping">
+                            <p>Shipping:</p>
+                            <p>Free</p>
+                        </li>
+                        <li>
+                            <p>Total:</p>
+                            <p id="total"></p>
+                        </li>
+                        <div class="radio-container">
+                            <label class="radio-option1">
+                                <input type="radio" name="payment" value="bank">
+                                <div class="bankdetails">
+                                    <p>Bank</p>
+                                    <img src="checkout-assets/Visa.png" alt="Visa">
+                                </div>
+                            </label>
+                            <label class="radio-option2">
+                                <input type="radio" name="payment" value="cod">
+                                <p>Cash on delivery</p>
+                            </label>
+                        </div>
+                    </ul>
+                    <button type="submit" class="placeorder">Place Order</button>
+                </div>
+            </article>            
+            </article>
+        </main>
+        <footer>
+            <ul>
+                <li>
+                    <h1>Contact Us</h1>
+                    <span>homestyle@gmail.com</span>
+                    <span>123-456-7890</span>
+                </li>
+                <li>
+                    <h1>Account</h1>
+                    <a href="#">My Account</a>
+                    <a href="login.html">Login / Register</a>
+                    <a href="#">Cart</a>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <h1>Quick Links</h1>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <h1>Download App</h1>
+                    <p>Save $3 with App New User Only</p>
+                    <div class="app-qr">
+                        <img src="checkout-assets/Qr Code.png" alt="App QR Code">
+                        <div class="app-logo">
+                            <img src="checkout-assets/download-appstore.png" alt="App Store">
+                            <img src="checkout-assets/google-play-store.png" alt="Google Play">
+                        </div>
+                        <div class="footer-socials">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </footer>  
+        <script src="checkout.js"></script>
+    </body>
+</html>
