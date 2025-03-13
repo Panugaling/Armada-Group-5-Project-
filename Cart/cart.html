@@ -39,53 +39,12 @@
                                 <th>Remove</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="item-info">
-                                    <img src="./Asset/chair and sofa/chairs.jpg" alt="Maz Dining Chair">
-                                    <span>Maz Dining Chair<br>Lorem ipsum dolor sit amet.</span>
-                                </td>
-                                <td>$10.00</td>
-                                <td>
-                                    <button class="qty-btn">-</button>
-                                    <span>1</span>
-                                    <button class="qty-btn">+</button>
-                                </td>
-                                <td>$10.00</td>
-                                <td><button class="remove-btn">X</button></td>
-                            </tr>
-                            <tr>
-                                <td class="item-info">
-                                    <img src="./Asset/chair and sofa/Bora Lounge Chair.jpg" alt="Bora Lounge Chair">
-                                    <span>Bora Lounge Chair<br>Lorem ipsum dolor sit amet.</span>
-                                </td>
-                                <td>$10.00</td>
-                                <td>
-                                    <button class="qty-btn">-</button>
-                                    <span>1</span>
-                                    <button class="qty-btn">+</button>
-                                </td>
-                                <td>$10.00</td>
-                                <td><button class="remove-btn">X</button></td>
-                            </tr>
-                            <tr>
-                                <td class="item-info">
-                                    <img src="./Asset/Tables/Pedestal Dining Table.jpg" alt="Pedestal Dining Table">
-                                    <span>Pedestal Dining Table<br>Lorem ipsum dolor sit amet.</span>
-                                </td>
-                                <td>$10.00</td>
-                                <td>
-                                    <button class="qty-btn">-</button>
-                                    <span>1</span>
-                                    <button class="qty-btn">+</button>
-                                </td>
-                                <td>$10.00</td>
-                                <td><button class="remove-btn">X</button></td>
-                            </tr>
+                        <tbody id="cart-items">
+                            <!-- Cart items will be dynamically inserted here -->
                         </tbody>
                     </table>
                     <div class="cart-total">
-                        <span>Total Price: <strong>P24,000.00</strong></span>
+                        <span>Total Price: <strong id="total-price">$0.00</strong></span>
                         <button class="checkout-btn">Check out</button>
                     </div>
                 </div>

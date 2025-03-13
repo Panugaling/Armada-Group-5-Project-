@@ -66,45 +66,78 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const cartButtons = document.querySelectorAll(".cart-btn");
+    const cartIcon = document.querySelector(".bxs-cart-alt");
+    const cartCount = document.getElementById("cart-count");
 
-document.addEventListener("DOMContentLoaded", function() {
-    const cartIcon = document.querySelector(".icons i"); // Cart icon
-    const cartCountDisplay = document.getElementById("cart-count"); // Cart count span
-    let cartCount = 0;
-    const cart = {}; // Object to store products {id: {name, price, quantity}}
+    console.log(cartCount);
 
-    // Select all "Add to Cart" buttons
-    const addToCartButtons = document.querySelectorAll(".cart-btn");
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+        cartCount.textContent = totalQuantity;
+    }
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            const productItem = this.closest("li");
-            const productId = productItem.getAttribute("data-id");
-            const productName = productItem.querySelector("h4").textContent;
-            const productPrice = productItem.querySelector(".price").textContent;
+    cartButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+            const item = event.target.closest("li");
+            const productId = item.getAttribute("data-id");
+            const productName = item.querySelector("h4").textContent;
+            const productImage = item.querySelector("img").src;
+            const productPrice = item.querySelector(".price").textContent;
 
-            // If product already exists in cart, increase quantity
-            if (cart[productId]) {
-                cart[productId].quantity += 1;
-            } else {
-                cart[productId] = {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            const existingProduct = cart.find(p => p.id === productId);
+            if (existingProduct) {
+                existingProduct.quantity = (existingProduct.quantity || 0) + 1;
+                cart.push({
+                    id: productId,
                     name: productName,
+                    image: productImage,
                     price: productPrice,
                     quantity: 1
-                };
+                });
             }
 
-            // Update cart count
-            cartCount++;
-            updateCartIcon();
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            updateCartCount();
+
+            animateImageToCart(item.querySelector("img"), cartIcon);
         });
     });
 
-    function updateCartIcon() {
-        cartCountDisplay.textContent = cartCount;
-        cartCountDisplay.style.display = cartCount > 0 ? "inline-block" : "none"; // Show only if > 0
+    function animateImageToCart(imageElement, cartIcon) {
+        const imageClone = imageElement.cloneNode(true);
+        const cartRect = cartIcon.getBoundingClientRect();
+        const imgRect = imageElement.getBoundingClientRect();
+
+        imageClone.style.position = "fixed";
+        imageClone.style.zIndex = "1000";
+        imageClone.style.width = "50px";
+        imageClone.style.opacity = "0.8";
+        imageClone.style.top = `${imgRect.top}px`;
+        imageClone.style.left = `${imgRect.left}px`;
+        imageClone.style.transition = "all 0.8s ease-in-out";
+
+        document.body.appendChild(imageClone);
+
+        setTimeout(() => {
+            imageClone.style.top = `${cartRect.top}px`;
+            imageClone.style.left = `${cartRect.left}px`;
+            imageClone.style.transform = "scale(0)";
+            imageClone.style.opacity = "0";
+        }, 100);
+
+        setTimeout(() => {
+            document.body.removeChild(imageClone);
+        }, 900);
     }
+    updateCartCount();
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const userProfile = document.querySelector('.user-profile');

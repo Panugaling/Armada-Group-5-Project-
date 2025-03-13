@@ -1,56 +1,71 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const cartTableBody = document.querySelector("tbody");
+document.addEventListener('DOMContentLoaded', function() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    function groupCartItems(cart) {
+        let groupedCart = {};
 
-    function renderCart() {
-        cartTableBody.innerHTML = "";
+        cart.forEach(item => {
+            if (groupedCart[item.name]) {
+                groupedCart[item.name].quantity += item.quantity || 1;
+            } else {
+                groupedCart[item.name] = {...item, quantity: item.quantity || 1 };
+            }
+        });
+
+        return Object.values(groupedCart);
+    }
+
+    function renderCartItems() {
+        cart = groupCartItems(cart);
+        cartItemsContainer.innerHTML = '';
+        let totalPrice = 0;
 
         cart.forEach((item, index) => {
-            if (!item.quantity) item.quantity = 1; // Ensure quantity exists
-
-            const row = document.createElement("tr");
+            const row = document.createElement('tr');
             row.innerHTML = `
                 <td class="item-info">
                     <img src="${item.image}" alt="${item.name}">
                     <span>${item.name}</span>
                 </td>
-                <td>$${parseFloat(item.price).toFixed(2)}</td>
+                <td>${item.price}</td>
                 <td>
-                    <button class="qty-btn decrease" data-index="${index}">-</button>
+                    <button class="qty-btn" onclick="decreaseQuantity(${index})">-</button>
                     <span>${item.quantity}</span>
-                    <button class="qty-btn increase" data-index="${index}">+</button>
+                    <button class="qty-btn" onclick="increaseQuantity(${index})">+</button>
                 </td>
-                <td>$${(parseFloat(item.price) * item.quantity).toFixed(2)}</td>
-                <td><button class="remove-btn" data-index="${index}">X</button></td>
+                <td>$${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}</td>
+                <td><button class="remove-btn" onclick="removeItem(${index})">X</button></td>
             `;
-            cartTableBody.appendChild(row);
+            cartItemsContainer.appendChild(row);
+
+            totalPrice += parseFloat(item.price.replace('$', '')) * item.quantity;
         });
 
-        updateTotal();
+        totalPriceElement.textContent = cart.length ? `$${totalPrice.toFixed(2)}` : "$0.00";
+        localStorage.setItem('cart', JSON.stringify(cart));
     }
 
-    function updateTotal() {
-        const totalPriceElement = document.querySelector(".cart-total strong");
-        const total = cart.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
-        totalPriceElement.textContent = `$${total.toFixed(2)}`;
-    }
+    window.increaseQuantity = function(index) {
+        cart[index].quantity += 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCartItems();
+    };
 
-    cartTableBody.addEventListener("click", (event) => {
-        const index = event.target.getAttribute("data-index");
-        if (index === null) return;
-
-        if (event.target.classList.contains("increase")) {
-            cart[index].quantity += 1;
-        } else if (event.target.classList.contains("decrease") && cart[index].quantity > 1) {
+    window.decreaseQuantity = function(index) {
+        if (cart[index].quantity > 1) {
             cart[index].quantity -= 1;
-        } else if (event.target.classList.contains("remove-btn")) {
+        } else {
             cart.splice(index, 1);
         }
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        renderCart();
-    });
-
-    renderCart();
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCartItems();
+    };
+    window.removeItem = function(index) {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCartItems();
+    };
+    renderCartItems();
 });
