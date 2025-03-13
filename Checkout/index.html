@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout</title>
+        <link rel="stylesheet" href="checkout.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="logoButton">
+                <button onclick=""><img src="images/logo.png"></button>
+            </div>
+            <div class="namewithProfile">
+                <h1>HomeStyle</h1>
+                <button id="profile-btn"><img src="images/User.png" alt="Profile"></button>
+                <div class="logout-dropdown" id="logout-dropdown">
+                    <button id="logout-btn">Log Out</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="backLink">
+                <a href="#" onclick="navigateTo('home')">Home</a>
+                <p>/</p>
+                <a href="#" onclick="navigateTo('cart')">Back to Cart</a>
+            </div>
+            <h3>Billing Details</h3>
+            <article>
+                <div class="billingSignup">
+                    <form>
+                        <ul>
+                            <li>
+                                <p>First Name*</p>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <p>Last Name*</p>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <p>Address*</p>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <p>Town/City*</p>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <p>Phone Number*</p>
+                                <input type="text">
+                            </li>
+                            <li>
+                                <p>Email Address*</p>
+                                <input type="email">
+                            </li>
+                            <li>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="save-info">
+                                    Save this information for faster check-out next time
+                                </label>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="billingOrder">
+                    <ul>
+                        <li>
+                            <p>Mazz Dining Chair</p>
+                            <p>$650.00</p>
+                        </li>
+                        <li>
+                            <p>Bora Lounge Chair</p>
+                            <p>$1100.00</p>
+                        </li>
+                        <li>
+                            <p>Subtotal: </p>
+                            <p>$1750.00</p>
+                        </li>
+                        <li class="shipping">
+                            <p>Shipping: </p>
+                            <p>Free</p>
+                        </li>
+                        <li>
+                            <p>Total: </p>
+                            <p>$1750.00</p>
+                        </li>
+                        <div class="radio-container">
+                            <label class="radio-option1">
+                                <input type="radio" name="payment" value="bank">
+                                <div class="bankdetails">
+                                    <p>Bank</p>
+                                    <img src="images/Visa.png">
+                                </div>
+                            </label>
+                            <label class="radio-option2">
+                                <input type="radio" name="payment" value="cod">
+                                <p>Cash on delivery</p>
+                            </label>
+                        </div>
+                        <button type="submit" class="placeorder">Place Order</button>
+                    </ul>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <ul>
+                <li>
+                    <h1>Contact Us</h1>
+                    <span>Homestyle@gmail.com</span>
+                    <span>123-456-7890</span>
+                </li>
+                <li>
+                    <h1>Acount</h1>
+                    <a href="#">My Account</a>
+                    <a href="#">Login /Register</a>
+                    <a href="#">Cart</a>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <h1>Quick Link</h1>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <h1>Download App</h1>
+                    <p>Save $3 with App New User Only</p>
+                    <div class="app-qr">
+                        <img src="images/Qr_Code.png" alt="App QR Code">
+                        <div class="app-logo">
+                            <img src="images/AppStore.png" alt="App Store">
+                            <img src="images/GooglePlay.png" alt="Google Play">
+                        </div>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                    </div>
+                </li>
+            </ul>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

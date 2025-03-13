@@ -7,45 +7,91 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-aside {
-    border: 1px solid gray;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 15px;
-}
-
-aside button {
-    width: 50px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 main {
     width: 100%;
 }
 
-main nav {
+header {
     border: 1px solid gray;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
+    background-color: white;
+    transition: all 0.3s ease;
+    gap: 100px;
+    transition: all 0.3s ease;
 }
 
-nav h1 {
+header h1 {
     margin: 0;
     font-weight: 400;
-    font-size: 35px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    transition: all 0.3s ease;
 }
 
-nav button {
-    width: 50px;
+header button {
+    width: 30px;
     background: none;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+header button img {
+    width: 30px;
+    transition: all 0.3s ease;
+}
+
+.namewithProfile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.logout-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: none;
+    padding: 10px;
+    z-index: 1000;
+    min-width: 120px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.logout-dropdown.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#logout-btn {
+    background-color: #0715a6;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%;
+}
+
+#logout-btn:hover {
+    background-color: #051080;
+}
+
+#logout-btn:active {
+    background-color: #030d5c;
 }
 
 main form .nav-bar {
@@ -144,6 +190,36 @@ main footer {
     z-index: 2;
 }
 
+/* Special style for 1st similar item */
+.first-item-active {
+    width: 575px !important; /* Bigger */
+    transform: translateY(60px) translateX(-10px); /* Moves up */
+    
+}
+
+/* Special style for 2nd similar item */
+.second-item-active {
+    width: 550px !important; /* Slightly bigger */
+    transform: translateY(90px) translateX(50px); /* Moves up */
+}
+
+.third-item-active {
+    width: 530px !important; /* Custom size */
+    transform: translateX(20px) translateY(100px); /* Custom position */
+}
+
+.fourth-item-active {
+    width: 600px !important; /* Custom size */
+    transform: translateX(20px) translateY(90px); /* Custom position */
+}
+
+/* General effect for other similar items */
+.similar-item-active {
+    width: 100px !important;
+    height: auto !important;
+    transform: scale(0.7);
+}
+
 .product-info {
     padding-left: 400px;
     padding-right: 110px;
@@ -177,66 +253,19 @@ main footer {
     font-size: 17px;
 }
 
-.quantity-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.quantity-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.quantity-btn {
-    width: 25px;
-    height: 25px;
-    border: 1px solid black;
-    background: white;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.quantity-input {
-    width: 50px;
-    height: 35px;
-    text-align: center;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.total-amount {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.amount {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background: white;
-    border: 1px solid black;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 7px;
-    padding: 10px 20px;
-}
-
 .add-to-cart {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     border: 1px solid black;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 20px 20px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 10px;
     gap: 10px;
     margin-top: 20px;
-    width: 160px;
+    width: 200px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -267,6 +296,52 @@ main footer {
 
 .imagesAngle img:hover {
     transform: scale(1.1); 
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.modal-content {
+    max-width: 100%; /* Adjust width relative to viewport */
+    max-height: 90vh; /* Adjust height relative to viewport */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth zoom and fade-in */
+    opacity: 0; /* Hide initially */
+    transform: scale(0.8); /* Start slightly smaller */
+}
+
+/* When modal opens, apply scaling and fade-in effect */
+.modal.show .modal-content {
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+/* Disable page scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 main footer .similarItems {
@@ -313,9 +388,12 @@ footer .itemDetails {
 
 footer .itemDetails .nameAndstars p {
     margin: 0;
-    font-size: 14px;
+    font-size: 13px;
 }
-
+footer .itemDetails .nameAndstars {
+    max-width: 100px;
+    width: 100%;
+}
 footer .itemDetails .costAndrating h4 {
     font-size: 16px;
     margin: 0;
