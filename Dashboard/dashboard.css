@@ -18,18 +18,43 @@ body {
 }
 
 .user-profile {
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 5px;
+    position: relative;
+    display: inline-block;
     cursor: pointer;
 }
 
 .user-profile i {
-    width: 80px;
-    height: 30px;
-    font-size: 24px;
-    color: #171f27;
+    font-size: 30px;
+    color: #333;
+}
+
+#logout-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: none;
+    width: 120px;
+    text-align: center;
+}
+
+#logout-dropdown button {
+    background: #0f08a1;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+}
+
+#logout-dropdown button:hover {
+    background: #cc0000;
 }
 
 .logo-container img {
@@ -71,10 +96,29 @@ body {
     cursor: pointer;
 }
 
+.icons {
+    position: relative;
+    display: inline-block;
+}
+
 .icons i {
-    font-size: 20px;
-    margin-left: 15px;
+    font-size: 30px;
+    color: #333;
     cursor: pointer;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none;
+    /* Hide when count is zero */
 }
 
 .dashboard-container {
