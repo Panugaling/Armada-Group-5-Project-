@@ -4,19 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Product View</title>
-        <link rel="stylesheet" href="/Product View/style.css">
+        <link rel="stylesheet" href="productview.css">
         <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     </head>
     <body>
-        <aside>
-            <button onclick=""><img src=""></button>
-            <button onclick=""><img src=""></button>
-        </aside>
         <main>
-            <nav>
-                <h1>HomeStyle</h1>
-                <button onclick=""><img src=""></button>
-            </nav>
+            <header>
+                <div class="logoButton">
+                    <button onclick=""><img src="images/logo.png"></button>
+                </div>
+                <div class="namewithProfile">
+                    <h1>HomeStyle</h1>
+                    <button id="profile-btn"><img src="images/User.png" alt="Profile"></button>
+                    <div class="logout-dropdown" id="logout-dropdown">
+                        <button id="logout-btn">Log Out</button>
+                    </div>
+                </div>
+            </header>
             <form>
                 <ul class="nav-bar">
                     <li>
@@ -39,38 +43,34 @@
             <article>
                  <div class="product-card">
                     <div class="product-image">
-                        <img src="images/chair1.png" alt="Mazz Dining Chair">
+                        <img id="mainProductImage" src="images/chair1.png" alt="Mazz Dining Chair">
                     </div>
                     <div class="product-info">
-                        <h1>Mazz Dining Chair</h1>
-                        <div class="rating">
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur. Eget sit posuere enim facilisi. Pretium orci venenatis habitasse gravida nulla tincidunt iaculis. Aliquet at massa quisque libero viverra ut sed. Est vulputate est rutrum nunc nunc pellentesque ultrices pharetra. Mauris euismod sed vel quisque tincidunt suspendisse sed turpis volutpat. </p>                              
-                    </div>
+                        <h1 id="productName">Arcadia Lounge Chair</h1>
+                        <div id="productRating">⭐⭐⭐⭐⭐</div>
+                        <p id="productDescription">
+                            The Arcadia Lounge Chair embodies a perfect balance between modern elegance and natural warmth. Featuring a gracefully curved backrest wrapped in textured, off-white fabric, this chair offers both comfort and visual harmony. The sturdy wooden frame, with its clean lines and natural finish, adds a minimalist yet inviting touch. Ideal for contemporary and Scandinavian-inspired interiors, the Arcadia Lounge Chair is a statement piece that seamlessly blends functionality with refined aesthetics.
+                        </p>
+                    </div>                    
                     <div class="purchase-info">
-                        <div class="quantity-section">
-                            <label for="quantity">Quantity</label>
-                            <div class="quantity-wrapper">
-                                <input type="number" id="quantity" value="1" min="1">
-                                <div class="quantityButtons">
-                                    <button class="quantity-btn" id="increase">▲</button>
-                                    <button class="quantity-btn" id="decrease">▼</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="total-amount">
-                            <span>Total Amount</span>
-                            <div class="amount">$10.00</div> 
-                        </div>
                         <button class="add-to-cart">
                             Add to cart <span class="cart-icon">🛒</span>
                         </button>
                     </div>
                     <div class="imagesAngle">
-                        <button onclick=""><img src="images/chair_1stangle.jpg"></button>
-                        <button onclick=""><img src="images/chair_2ndangle.jpg"></button>
-                        <button onclick=""><img src="images/chair_3rdangle.jpg"></button>
+                        <button onclick="openModal(document.getElementById('angleImage1').src)">
+                            <img id="angleImage1" src="images/chair_1stangle.jpg">
+                        </button>
+                        <button onclick="openModal(document.getElementById('angleImage2').src)">
+                            <img id="angleImage2" src="images/chair_2ndangle.jpg">
+                        </button>
+                        <button onclick="openModal(document.getElementById('angleImage3').src)">
+                            <img id="angleImage3" src="images/chair_3rdangle.jpg">
+                        </button>
+                    </div>
+                    <div id="imageModal" class="modal" onclick="closeModal()">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="modalImage">
                     </div>              
                 </div>
             </article>
@@ -78,12 +78,20 @@
                 <p class="similarItems">Similar Items</p>
                 <ul>
                     <li>
-                        <button onclick="">
-                            <img src="images/1st_similaritem.png">
+                        <button onclick="updateProduct(this)"
+                            data-name="Horizon Armchair"
+                            data-rating="⭐⭐⭐⭐⭐"
+                            data-description="The Horizon Armchair redefines contemporary seating with its bold structure and plush comfort. Wrapped in a luxurious bouclé fabric, the chair’s curved, cushioned backrest and seat offer a cozy embrace, making it an inviting addition to any modern or minimalist space. The solid wood frame, featuring rich walnut-toned vertical supports, creates a striking contrast against the soft upholstery, highlighting its architectural design."
+                            data-angle1="images/1st_similaritem_angle1.png"
+                            data-angle2="images/1st_similaritem_angle2.png"
+                            data-angle3="images/1st_similaritem_angle3.png"
+                            data-price="10.00">
+                            <div class="chair2">
+                                <img src="images/1st_similaritem.png">
+                            </div>
                             <div class="itemDetails">
                                 <div class="nameAndstars">
-                                    <p>Chair</p>
-                                    ⭐⭐⭐⭐⭐
+                                    <p>Horizon Armchair</p> ⭐⭐⭐⭐⭐
                                 </div>
                                 <div class="costAndrating">
                                     <h4>$ 10.00</h4>
@@ -93,53 +101,77 @@
                         </button>
                     </li>
                     <li>
-                        <button onclick="">
-                            <img src="images/2nd_similaritem.jpg">
+                        <button onclick="updateProduct(this)"
+                            data-name="Cloudhaven Lounge Chair"
+                            data-rating="⭐⭐⭐⭐⭐"
+                            data-description="The Cloudhaven Lounge Chair is the epitome of plush luxury, designed to offer both comfort and elegance. Wrapped in soft, textured bouclé fabric, this chair features an oversized, cushioned seat and a thick, rounded backrest that seamlessly curves for an inviting embrace. The sturdy wooden legs, finished in a warm natural tone, add a subtle contrast while maintaining a light, airy aesthetic."
+                            data-angle1="images/2nd_similaritem_angle2.jpg"
+                            data-angle2="images/2nd_similaritem_angle1.jpg"
+                            data-angle3="images/2nd_similaritem_angle3.jpg"
+                            data-price="12.00">
+                            <div class="chair3">
+                                <img src="images/2nd_similaritem-removebg.png" alt="Cloudhaven Lounge Chair">
+                            </div>
                             <div class="itemDetails">
                                 <div class="nameAndstars">
-                                    <p>Chair</p>
-                                    ⭐⭐⭐⭐⭐
+                                    <p>Cloudhaven Lounge Chair</p> ⭐⭐⭐⭐⭐
                                 </div>
                                 <div class="costAndrating">
-                                    <h4>$ 10.00</h4>
-                                    <p>200+ rating</p>
+                                    <h4>$ 12.00</h4>
+                                    <p>150+ rating</p>
                                 </div>
                             </div>
                         </button>
                     </li>
                     <li>
-                        <button onclick="">
-                            <img src="images/3rd_similaritem.jpg">
+                        <button onclick="updateProduct(this)"
+                            data-name="Arco Lounge Chair"
+                            data-rating="⭐⭐⭐⭐⭐"
+                            data-description="The Arco Lounge Chair is a masterful blend of sculptural elegance and modern craftsmanship. Featuring gracefully arched wooden legs that seamlessly transition into the armrests, this chair embodies a harmonious balance of form and function. The textured fabric upholstery, stretched across the curved backrest and seat, adds an inviting touch while maintaining a refined, minimalist aesthetic."
+                            data-angle1="images/3rd_similaritem_angle1.jpg"
+                            data-angle2="images/3rd_similaritem_angle2.jpg"
+                            data-angle3="images/3rd_similaritem_angle3.jpg"
+                            data-price="15.00">
+                            <div class="chair3">
+                                <img src="images/3rd_similaritem-removebg.png">
+                            </div>
                             <div class="itemDetails">
                                 <div class="nameAndstars">
-                                    <p>Chair</p>
-                                    ⭐⭐⭐⭐⭐
+                                    <p>Arco Lounge Chair</p> ⭐⭐⭐⭐⭐
                                 </div>
                                 <div class="costAndrating">
-                                    <h4>$ 10.00</h4>
-                                    <p>200+ rating</p>
+                                    <h4>$ 15.00</h4>
+                                    <p>180+ rating</p>
                                 </div>
                             </div>
                         </button>
                     </li>
                     <li>
-                        <button onclick="">
-                            <img src="images/4th_similaritem.jpg">
+                        <button onclick="updateProduct(this)"
+                            data-name="Ember Curve Lounge Chair"
+                            data-rating="⭐⭐⭐⭐⭐"
+                            data-description="The Ember Curve Lounge Chair is a bold fusion of contemporary design and plush comfort. Featuring an organic, sculptural silhouette, this chair is defined by its oversized, arching armrests that seamlessly flow into its deeply cushioned seat. Upholstered in a soft, earthy-toned fabric, it exudes warmth and sophistication while maintaining a minimalist, monolithic presence."
+                            data-angle1="images/4th_similaritem_angle1.jpg"
+                            data-angle2="images/4th_similaritem_angle2.jpg"
+                            data-angle3="images/4th_similaritem_angle3.jpg"
+                            data-price="18.00">
+                            <div class="chair3">
+                                <img src="images/4th_similaritem-removebg.png">
+                            </div>
                             <div class="itemDetails">
                                 <div class="nameAndstars">
-                                    <p>Chair</p>
-                                    ⭐⭐⭐⭐⭐
+                                    <p>Ember Curve Lounge Chair</p> ⭐⭐⭐⭐
                                 </div>
                                 <div class="costAndrating">
-                                    <h4>$ 10.00</h4>
-                                    <p>200+ rating</p>
+                                    <h4>$ 18.00</h4>
+                                    <p>220+ rating</p>
                                 </div>
                             </div>
                         </button>
                     </li>
                 </ul>
-            </footer>
+            </footer>            
         </main>
-        <script src="/Product View/script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
