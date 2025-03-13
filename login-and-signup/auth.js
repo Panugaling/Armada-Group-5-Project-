@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
 
     function getUsers() {
         let users = localStorage.getItem("users");
@@ -31,36 +31,46 @@ document.addEventListener("DOMContentLoaded", function () {
         return false;
     }
 
-    document.getElementById("signupForm")?.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
-        const confirmPassword = document.getElementById("confirm-password").value.trim();
+    ddocument.addEventListener("DOMContentLoaded", function() {
+        const signupForm = document.getElementById("signupForm");
+        if (signupForm) {
+            signupForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+                const confirmPassword = document.getElementById("confirm-password").value.trim();
 
-        if (password !== confirmPassword) {
-            alert("Passwords don't match!");
-            return;
+                if (password !== confirmPassword) {
+                    alert("Passwords don't match!");
+                    return;
+                }
+
+                addUser(email, password);
+            });
         }
 
-        addUser(email, password);
-    });
+        const loginForm = document.getElementById("loginForm");
+        if (loginForm) {
+            loginForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
 
-    document.getElementById("loginForm")?.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
+                if (checkLogin(email, password)) {
+                    alert("Login successful!");
+                    window.location.href = "../Dashboard/dashboard.html";
+                } else {
+                    alert("Invalid email or password.");
+                }
+            });
+        }
 
-        if (checkLogin(email, password)) {
-            alert("Login successful!");
-            window.location.href = "dashboard.html";
-        } else {
-            alert("Invalid email or password.");
+        const forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
+        if (forgotPasswordBtn) {
+            forgotPasswordBtn.addEventListener("click", function() {
+                const email = prompt("Enter your email to reset the password:");
+                if (email) resetPassword(email.trim());
+            });
         }
     });
-
-    document.getElementById("forgotPasswordBtn")?.addEventListener("click", function () {
-        const email = prompt("Enter your email to reset the password:");
-        if (email) resetPassword(email.trim());
-    });
-
 });

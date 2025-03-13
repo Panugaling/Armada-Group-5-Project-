@@ -82,6 +82,9 @@ h2 {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
+    max-height: 500px;
+    /* Adjust height as needed */
+    overflow-y: auto;
 }
 
 table {

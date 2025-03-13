@@ -12,7 +12,6 @@
 
 <body>
 
-    <!-- Header Bar -->
     <header class="header">
         <div class="logo-container">
             <img src="./Asset/icons/logo.png" alt="HomeStyle Logo">
@@ -20,57 +19,57 @@
         </div>
         <div class="user-profile">
             <i class='bx bxs-user-circle'></i>
+            <div class="logout-dropdown" id="logout-dropdown">
+                <button id="logout-btn">Log Out</button>
+            </div>
         </div>
-
     </header>
 
     <div class="dashboard-container">
-        <!-- Aside -->
 
         <nav class="sidebar">
-            <div class="toggle-menu">
-                <i class='bx bx-menu'></i>
-            </div>
             <h3>Categories</h3>
             <ul>
                 <li>
-                    <a href="#"><img src="./Asset/icons/chair_sidebar.jpg"> Sofa / Chairs</a>
+                    <a href="#" data-category="sofa-chairs"><img src="./Asset/icons/chair_sidebar.jpg"> Sofa / Chairs</a>
                 </li>
                 <li>
-                    <a href="#"><img src="./Asset/icons/Bed_sidebar.png"> Bed</a>
+                    <a href="#" data-category="bed"><img src="./Asset/icons/Bed_sidebar.png"> Bed</a>
                 </li>
                 <li>
-                    <a href="#"><img src="./Asset/icons/Cabinets_sidebar.png"> Cabinet/ Wardrobes</a>
+                    <a href="#" data-category="cabinet-wardrobes"><img src="./Asset/icons/Cabinets_sidebar.png"> Cabinet/ Wardrobes</a>
                 </li>
                 <li>
-                    <a href="#"><img src="./Asset/icons/Table_sidebar.png"> Tables</a>
+                    <a href="#" data-category="tables"><img src="./Asset/icons/Table_sidebar.png"> Tables</a>
                 </li>
                 <li>
-                    <a href="#"><img src="./Asset/icons/vanity_sidebar.png"> Vanity</a>
+                    <a href="#" data-category="vanity"><img src="./Asset/icons/vanity_sidebar.png"> Vanity</a>
                 </li>
+                <li>
+                    <a href="#" data-category="all"><img src="./Asset/icons/Furniture.png"> All Products</a>
             </ul>
         </nav>
 
-        <!-- Main -->
         <main>
             <ul class="nav-bar">
                 <li>
                     <form class="search-bar">
-                        <input type="text" placeholder="Search products">
+                        <input type="text" id="search-input" placeholder="Search products">
                         <i class='bx bx-search-alt-2'></i>
                     </form>
                 </li>
                 <li>
                     <div class="icons">
-                        <i class='bx bxs-cart-alt'></i>
+                        <a href="../Cart/cart.html">
+                            <i class='bx bxs-cart-alt' data-quantity="0"></i></a>
                     </div>
                 </li>
             </ul>
 
             <section>
-                <h3>All Products</h3>
-                <ul>
-                    <li>
+                <h3>Products</h3>
+                <ul class="item-list">
+                    <li data-category="bed" data-id="1">
                         <img src="./Asset/bed/Jocelyn Brown Queen Bed.jpg" alt="Jocelyn Brown Queen Bed">
                         <h4>Jocelyn Brown Queen Bed</h4>
                         <span class="price">$10.00</span>
@@ -84,7 +83,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="sofa-chairs" data-id="2">
                         <img src="./Asset/chair and sofa/leather Loveseat Recliner .jpg" alt="leather Loveseat Recliner">
                         <h4>leather Loveseat Recliner</h4>
                         <span class="price">$10.00</span>
@@ -97,7 +96,7 @@
                             <i class='bx bx-star'></i>
                             <span>200+ rating</span>
                     </li>
-                    <li>
+                    <li data-category="sofa-chairs" data-id="3">
                         <img src="./Asset/chair and sofa/Bora Lounge Chair.jpg" alt="Bora Lounge Chair">
                         <h4>Bora Lounge Chair</h4>
                         <span class="price">$10.00</span>
@@ -111,7 +110,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="sofa-chairs" data-id="4">
                         <img src="./Asset/chair and sofa/Teddy Boucle Seater.jpg" alt="Teddy Boucle Seater">
                         <h4>Teddy Boucle Seater</h4>
                         <span class="price">$10.00</span>
@@ -125,7 +124,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="sofa-chairs" data-id="5">
                         <img src="./Asset/chair and sofa/Swivel Chair.jpg" alt="Swivel Chair">
                         <h4>Swivel Chair</h4>
                         <span class="price">$10.00</span>
@@ -139,7 +138,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="tables" data-id="6">
                         <img src="./Asset/Tables/White Marble Side Table.jpg" alt="White Marble Side Table">
                         <h4>White Marble Side Table</h4>
                         <span class="price">$10.00</span>
@@ -153,7 +152,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="bed" data-id="7">
                         <img src="./Asset/bed/victorian bed.jpg" alt="victorian bed">
                         <h4>victorian bed</h4>
                         <span class="price">$10.00</span>
@@ -168,7 +167,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="tables" data-id="8">
                         <img src="./Asset/Tables/Vector Expandable Dining Table.jpg" alt="Vector Expandable Dining Table">
                         <h4>Vector Expandable Dining Table</h4>
                         <span class="price">$10.00</span>
@@ -182,7 +181,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="tables" data-id="9">
                         <img src="./Asset/Tables/Pedestal Dining Table.jpg" alt="Pedestal Dining Table">
                         <h4>Pedestal Dining Table</h4>
                         <span class="price">$10.00</span>
@@ -196,7 +195,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="tables" data-id="10">
                         <img src="./Asset/Tables/Console Table.jpg" alt="Console Table">
                         <h4>Console Table</h4>
                         <span class="price">$10.00</span>
@@ -210,7 +209,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="cabinet-wardrobes" data-id="11">
                         <img src="./Asset/wardrobes and cabinet/Bedside table with drawers.jpg" alt="Bedside table with drawers">
                         <h4>Bedside table with drawers</h4>
                         <span class="price">$10.00</span>
@@ -224,7 +223,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="cabinet-wardrobes" data-id="12">
                         <img src="./Asset/wardrobes and cabinet/Glass Display Cabinet.jpg" alt="Glass Display Cabinet">
                         <h4>Glass Display Cabinet</h4>
                         <span class="price">$10.00</span>
@@ -238,7 +237,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="cabinet-wardrobes" data-id="13">
                         <img src="./Asset/wardrobes and cabinet/Tallboy Dresser.jpg" alt="Tallboy Dresser">
                         <h4>Tallboy Dresser</h4>
                         <span class="price">$10.00</span>
@@ -252,7 +251,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="cabinet-wardrobes" data-id="14">
                         <img src="./Asset/wardrobes and cabinet/Floating Cabinet.jpg" alt="Floating Cabinet">
                         <h4>Floating Cabinet</h4>
                         <span class="price">$10.00</span>
@@ -266,7 +265,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="cabinet-wardrobes" data-id="15">
                         <img src="./Asset/wardrobes and cabinet/Modular Closet System.jpg" alt="Modular Closet System">
                         <h4>Modular Closet System</h4>
                         <span class="price">$10.00</span>
@@ -280,7 +279,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="bed" data-id="16">
                         <img src="./Asset/bed/Lana Upholstered Storage Bed.jpg" alt="Lana Upholstered Storage Bed">
                         <h4>Lana Upholstered Storage Bed</h4>
                         <span class="price">$10.00</span>
@@ -294,7 +293,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="bed" data-id="17">
                         <img src="./Asset/bed/modern bed.jpg" alt="modern bed">
                         <h4>modern bed</h4>
                         <span class="price">$10.00</span>
@@ -308,7 +307,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="bed" data-id="18">
                         <img src="./Asset/bed/French Wooden Bed.jpg" alt="French Wooden Bed">
                         <h4>French Wooden Bed</h4>
                         <span class="price">$10.00</span>
@@ -322,7 +321,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="vanity" data-id="19">
                         <img src="./Asset/Vanity/Mirror LED Vanity Makeup Table Set .jpg" alt="Mirror LED Vanity Makeup Table">
                         <h4>LED Vanity Makeup Table Set</h4>
                         <span class="price">$10.00</span>
@@ -336,7 +335,7 @@
                             <span>200+ rating</span>
                         </div>
                     </li>
-                    <li>
+                    <li data-category="vanity" data-id="20">
                         <img src="./Asset/Vanity/Dressing With Adjustable Vanity.jpg" alt="Dressing With Adjustable Vanity">
                         <h4>Dressing With Adjustable Vanity</h4>
                         <span class="price">$10.00</span>
