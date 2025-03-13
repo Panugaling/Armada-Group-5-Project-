@@ -7,19 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
         cartTableBody.innerHTML = "";
 
         cart.forEach((item, index) => {
+            if (!item.quantity) item.quantity = 1; // Ensure quantity exists
+
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td class="item-info">
                     <img src="${item.image}" alt="${item.name}">
                     <span>${item.name}</span>
                 </td>
-                <td>${item.price}</td>
+                <td>$${parseFloat(item.price).toFixed(2)}</td>
                 <td>
                     <button class="qty-btn decrease" data-index="${index}">-</button>
                     <span>${item.quantity}</span>
                     <button class="qty-btn increase" data-index="${index}">+</button>
                 </td>
-                <td>$${(parseFloat(item.price.replace("$", "")) * item.quantity).toFixed(2)}</td>
+                <td>$${(parseFloat(item.price) * item.quantity).toFixed(2)}</td>
                 <td><button class="remove-btn" data-index="${index}">X</button></td>
             `;
             cartTableBody.appendChild(row);
@@ -30,12 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateTotal() {
         const totalPriceElement = document.querySelector(".cart-total strong");
-        const total = cart.reduce((sum, item) => sum + (parseFloat(item.price.replace("$", "")) * item.quantity), 0);
+        const total = cart.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
         totalPriceElement.textContent = `$${total.toFixed(2)}`;
     }
 
     cartTableBody.addEventListener("click", (event) => {
         const index = event.target.getAttribute("data-index");
+        if (index === null) return;
+
         if (event.target.classList.contains("increase")) {
             cart[index].quantity += 1;
         } else if (event.target.classList.contains("decrease") && cart[index].quantity > 1) {
