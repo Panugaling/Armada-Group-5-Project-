@@ -101,7 +101,7 @@ body {
     display: inline-block;
 }
 
-.icons i {
+.icons a {
     font-size: 30px;
     color: #333;
     cursor: pointer;
@@ -109,16 +109,20 @@ body {
 
 #cart-count {
     position: absolute;
-    top: -5px;
-    right: -10px;
+    top: -12px;
+    right: -3px;
     background: red;
     color: white;
     font-size: 12px;
     font-weight: bold;
     padding: 2px 6px;
     border-radius: 50%;
-    display: none;
-    /* Hide when count is zero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 18px;
+    height: 18px;
+    line-height: 1;
 }
 
 .dashboard-container {
