@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         users.push(email + "," + password);
         localStorage.setItem("users", users.join(";"));
-        alert("You signed up successfully!");
+        alert("You signed up successfully! Start Shopping.");
         window.location.href = "dashboard.html";
     }
 
@@ -56,11 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             alert("Invalid email or password.");
         }
-    });
-
-    document.getElementById("forgotPasswordBtn")?.addEventListener("click", function () {
-        const email = prompt("Enter your email to reset the password:");
-        if (email) resetPassword(email.trim());
     });
 
 });
